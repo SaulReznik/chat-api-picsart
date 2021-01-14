@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { UserModel } = require('chat-mongo-models-picsart');
 
-const config = require('../config');
+const { ACCESS_TOKEN_SECRET } = require('../config');
 
 module.exports = async ({ request, response }) => {
   try {
@@ -17,7 +17,7 @@ module.exports = async ({ request, response }) => {
         {
           username: username
         },
-        config.ACCESS_TOKEN_SECRET
+        ACCESS_TOKEN_SECRET
       );
 
       response.body = {

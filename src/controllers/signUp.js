@@ -6,6 +6,7 @@ module.exports = async ({ request, response }) => {
     if (!request.body.password || request.body.password.length < 8) {
       response.status = 400;
       response.body = 'Please provide valid password';
+      return;
     }
 
     if (!request.body.username || request.body.username.length < 3) {
